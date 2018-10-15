@@ -1,7 +1,7 @@
 import requests
 import xmltodict
 
-auth_details = ('alanblokker2000@gmail.com', 'tNxX_VUBVU6zopAzo3RZ3n0pEDOp-fGTdDEFPC321Lw-4kMVMez2Jw')
+auth_details = ('j.vanbuuren7@gmail.com', 'ieJAkpfjnTqlQK4_J3So53ddvTk4_zElya4Psi5mnudqqwYAoWHLSg')
 eindstation = input('Wat is uw station? ')
 api_url = 'https://webservices.ns.nl/ns-api-avt?station=' + eindstation
 response = requests.get(api_url, auth=auth_details)

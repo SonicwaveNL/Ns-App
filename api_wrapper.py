@@ -3,7 +3,7 @@ import xmltodict
 import codecs
 
 # Authentication details
-auth_details = ('alanblokker2000@gmail.com', 'tNxX_VUBVU6zopAzo3RZ3n0pEDOp-fGTdDEFPC321Lw-4kMVMez2Jw')
+auth_details = ('j.vanbuuren7@gmail.com', 'ieJAkpfjnTqlQK4_J3So53ddvTk4_zElya4Psi5mnudqqwYAoWHLSg')
 
 is_new_database = input('Wilt u de stations database ververessen (Y/N)')
 
