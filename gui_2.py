@@ -57,7 +57,7 @@ button1 = None
 p = None
 f1 = None
 
-frame = Frame(master=window, background='gold', width=60, height=60)
+frame = Frame(master=window, background='gold', width=20, height=60)
 frame.pack(side=LEFT, fill=BOTH)
 
 innerframe = Frame(master=frame, background='gold')

@@ -13,7 +13,8 @@ def make(select_event, frame_label):
     for stations, keys in xml.items():
         for station, key in keys.items():
             for stat in key:
-                stationlist.insert(END, stat['name'])
+                if stat['country'] == "NL":
+                    stationlist.insert(END, stat['name'])
     stationlist.bind('<<ListboxSelect>>', select_event)
     stationlist.pack(side=LEFT, fill=Y, expand=1)
     scrollbar.config(command=stationlist.yview)
