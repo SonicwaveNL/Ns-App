@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <title>NS app</title>
+    <script type=text/javascript src="{{url_for('static', filename='jquery-3.1.1.min.js')}}"></script>
+    <script type=text/javascript src="{{url_for('static', filename='script.js')}}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <div class="main">
+                <div class="content__wrapper">
+                    <div class="logo__wrapper">
+                        <img src="{{url_for('static', filename='logo.png')}}">
+                    </div>
+                    <span class="welcome__title">Welkom bij NS</span>
+                </div>
+            </div>
+        </div>
+        <div class="stations__wrapper">
+            <div class="station-title__wrapper">
+                <label class="stations-label">Stations</label>
+            </div>
+            {{ stationsList}}
+        </div>
+    </div>
+</body>
+</html>

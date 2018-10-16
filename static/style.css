@@ -1,0 +1,83 @@
+html, body {
+    margin: 0;
+    color: #003082;
+    max-height: 100vh;
+}
+
+.container {
+    background-color: gold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrap {
+    width: 80%;
+    position: relative;
+    text-align: center;
+}
+
+.content__wrapper {
+    min-height: 100vh;
+}
+
+.content__wrapper .welcome__title {
+    font-size: 40px;
+}
+
+.main, .stations__wrapper {
+    display: inline-block;
+}
+
+.station-title__wrapper {
+    text-align: center;
+    margin-top: 6px;
+}
+
+.logo__wrapper {
+    text-align: center;
+}
+
+.logo__wrapper img {
+    padding-bottom: 10px;
+}
+
+label.stations-label {
+    padding-left: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+    color: #003082;
+}
+
+li {
+    list-style: none;
+}
+
+.stations__wrapper {
+    width: 18%;
+    overflow-y: scroll;
+    border-left: 5px solid #e6e6e9;
+    position: fixed;
+    right: 0;
+    height: 100%;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+table tr td, table tr th {
+    padding-left: 12px;
+    padding-right: 12px;
+}
