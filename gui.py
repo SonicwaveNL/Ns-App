@@ -48,8 +48,8 @@ def departures(thisstation):
 
     departures = xmltodict.parse(departure.text)
 
-    table = '<table><tr class="tableHeader"><th>Tijd</th><th>Naar</th><th>Vervoerder</th><th>Spoor</th></tr>'
     if 'ActueleVertrekTijden' in departures:
+        table = '<table><tr class="tableHeader"><th>Tijd</th><th>Naar</th><th>Vervoerder</th><th>Spoor</th></tr>'
         for departure in departures['ActueleVertrekTijden']['VertrekkendeTrein']:
             destination = departure['EindBestemming']
 
@@ -73,7 +73,7 @@ def departures(thisstation):
                 table += '</br><span class="via">Via: %s</span>' % (departureVia)
             table += '</td><td> %s </td><td> %s </td></tr>' % (transporter, departureTrack)
     else:
-        table += '<tr><td><b>Er zijn geen vertrektijden van dit station.</b></td></tr>'
+        table = 'Er zijn geen vertrektijden van dit station.'
 
     table += '</table>'
     tableCode = Markup(table)
