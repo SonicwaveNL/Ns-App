@@ -15,23 +15,24 @@
                     <div class="logo__wrapper">
                         <img src="{{url_for('static', filename='logo.png')}}">
                     </div>
+                    <input class="search-station" type="text" placeholder="Zoek station...">
                     <div class="station-name">
                         <h1>{{name}}</h1>
                     </div>
                     <div class="departure__wrapper">
                         {{departure}}
                     </div>
-                    <div class="button__wrapper">
-                        <a href="/" class="back-button-link">Terug</a>
-                    </div>
                 </div>
+            <div class="button__wrapper">
+                <a href="/" class="back-button-link"><div class="back-button">Terug</div></a>
+            </div>
             </div>
         </div>
         <div class="stations__wrapper">
             <div class="station-title__wrapper">
                 <label class="stations-label">Stations</label>
             </div>
-            {{ stationsList}}
+            {{stationsList}}
         </div>
     </div>
 </body>
