@@ -71,6 +71,7 @@ def departures(thisstation):
 
             if 'RouteTekst' in departure:
                 table += '</br><span class="via">Via: %s</span>' % (departureVia)
+
             table += '</td><td> %s </td><td> %s </td></tr>' % (transporter, departureTrack)
     else:
         table = 'Er zijn geen vertrektijden van dit station.'
