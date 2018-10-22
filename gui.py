@@ -36,14 +36,12 @@ def sidebar():
 
     return stationsListCode
 
-@app.route("/tijden/<string:thisstation>")
-def departures(thisstation):
+@app.route("/tijden/<string:currentStation>")
+def departures(currentStation):
 
-    # this_station_code sets the code from the station where the application is running.
-    # This has to be set by hand to show the first time. Later can be chosen by the user to show there wanted station.
-    this_station_code = thisstation
+    stationCode = currentStation
 
-    api_url_departure = 'http://webservices.ns.nl/ns-api-avt?station=' + this_station_code
+    api_url_departure = 'http://webservices.ns.nl/ns-api-avt?station=' + stationCode
     departure = requests.get(api_url_departure, auth=auth_details)
 
     departures = xmltodict.parse(departure.text)
@@ -73,14 +71,14 @@ def departures(thisstation):
                 table += '</br><span class="via">Via: %s</span>' % (departureVia)
 
             table += '</td><td> %s </td><td> %s </td></tr>' % (transporter, departureTrack)
+        table += '</table>'
     else:
         table = 'Er zijn geen vertrektijden van dit station.'
 
-    table += '</table>'
     tableCode = Markup(table)
 
     stationsListCode = sidebar()
 
-    return render_template('vertrektijden.html',  name=thisstation, stationsList=stationsListCode, departure=tableCode)
+    return render_template('vertrektijden.html',  name=currentStation, stationsList=stationsListCode, departure=tableCode)
 
 app.run()
