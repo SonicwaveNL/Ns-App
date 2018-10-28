@@ -2,15 +2,12 @@ import requests
 import xmltodict
 from flask import Flask, render_template, Markup
 
-labels = []
-station_label = None
 app = Flask(__name__)
 
 auth_details = ('j.vanbuuren7@gmail.com', 'ieJAkpfjnTqlQK4_J3So53ddvTk4_zElya4Psi5mnudqqwYAoWHLSg')
 
 @app.route("/")
 def home():
-
     stationsListCode = sidebar()
 
     return render_template('home.html', stationsList=stationsListCode)
@@ -25,7 +22,6 @@ def sidebar():
 
     for station in stationsXML['Stations']['Station']:
         stationName = station["Namen"]["Lang"].replace("a/d", "aan den")
-
 
         if station['Land'] == "NL":
             stationsList += '<a class="station" href="/tijden/%s"><li>%s</li></a>' % (stationName, stationName)
