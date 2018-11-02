@@ -82,4 +82,4 @@ def departures(currentStation):
 
     return render_template('vertrektijden.html',  name=currentStation, stationsList=stationsListCode, departure=tableCode)
 
-app.run(debug = True)
+app.run()
