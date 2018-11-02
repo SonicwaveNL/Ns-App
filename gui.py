@@ -10,7 +10,7 @@ auth_details = ('j.vanbuuren7@gmail.com', 'ieJAkpfjnTqlQK4_J3So53ddvTk4_zElya4Ps
 def home():
     stationsListCode = sidebar()
 
-    return render_template('home.html', stationsList=stationsListCode)
+    return render_template('home.html', stationsList=stationsListCode) 
 
 def sidebar():
     api_url = 'https://webservices.ns.nl/ns-api-stations-v2'
