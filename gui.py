@@ -61,7 +61,12 @@ def departures(currentStation):
 
             transporter = departure['Vervoerder']
 
-            table += '<tr valign="top" class="trMain"><td> %s </td><td> %s ' % (departureTime, destination)
+            table += '<tr valign="top" class="trMain"><td> %s ' % (departureTime)
+
+            if "VertrekVertragingTekst" in departure:
+                table += '</br><span class="delay">%s</span>' % (departure["VertrekVertragingTekst"])
+
+            table += '<td> %s' % (destination)
 
             if 'RouteTekst' in departure:
                 table += '</br><span class="via">Via: %s</span>' % (departureVia)
@@ -77,4 +82,4 @@ def departures(currentStation):
 
     return render_template('vertrektijden.html',  name=currentStation, stationsList=stationsListCode, departure=tableCode)
 
-app.run()
+app.run(debug = True)
